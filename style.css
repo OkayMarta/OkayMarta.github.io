@@ -14,7 +14,7 @@ body {
 }
 
 .navigation {
-    background-color: #eee;
+    background-color: #333; /* Фон навігації як у шапки */
     padding: 10px 0;
 }
 
@@ -35,23 +35,20 @@ body {
     text-decoration: none;
     color: #333;
     font-weight: bold;
-    color: white; /* Змінюємо колір посилань навігації на білий, бо фон шапки темний */
-}
-.navigation {
-    background-color: #333; /* Робимо фон навігації таким же, як і шапка, для цілісності дизайну */
+    color: white;
 }
 
 
 .content {
     max-width: 960px;
-    margin: 20px auto; /* Центрування блоку контенту по горизонталі */
+    margin: 20px auto; /* Центрування блоку контенту */
     padding: 20px;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .articles-section h2,
-.publications-section h2, /* Перейменовано селектор */
+.publications-section h2,
 .publication-section h2 {
     margin-top: 0;
     border-bottom: 2px solid #ddd;
@@ -59,14 +56,14 @@ body {
     margin-bottom: 20px;
 }
 
-/* --- Стилі для розділу "Публікації" (колишні "Статті") --- */
-.publications-section .publication-list { /* Перейменовано селектор та class */
+/* Стилі для розділу "Публікації" */
+.publications-section .publication-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.publications-section .publication-item { /* Перейменовано селектор та class */
+.publications-section .publication-item {
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
@@ -76,7 +73,7 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.publications-section .publication-item img { /* Перейменовано селектор та class */
+.publications-section .publication-item img {
     display: block;
     width: 100%;
     height: auto;
@@ -84,21 +81,21 @@ body {
     object-fit: cover;
 }
 
-.publications-section .publication-details { /* Перейменовано селектор та class */
+.publications-section .publication-details {
     padding: 15px;
 }
 
-.publications-section .publication-details h3 { /* Перейменовано селектор та class */
+.publications-section .publication-details h3 {
     margin-top: 0;
     margin-bottom: 10px;
 }
 
-.publications-section .publication-details p { /* Перейменовано селектор та class */
+.publications-section .publication-details p {
     margin-bottom: 15px;
     line-height: 1.5;
 }
 
-.publications-section .publication-meta { /* Перейменовано селектор та class */
+.publications-section .publication-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -106,7 +103,7 @@ body {
     color: #777;
 }
 
-.publications-section .read-more-link { /* Перейменовано селектор та class */
+.publications-section .read-more-link {
     background-color: #007bff;
     color: white;
     padding: 8px 15px;
@@ -114,36 +111,36 @@ body {
     text-decoration: none;
 }
 
-/* --- Оновлені стилі для розділу "Статті" (колишні "Мої публікації") --- */
-.articles-section .article-item { /* Перейменовано селектор та class */
+/* Стилі для розділу "Статті" */
+.articles-section .article-item {
     border-bottom: 1px solid #eee;
     padding: 10px 0;
     margin-bottom: 20px;
 }
 
-.articles-section .article-item:last-child { /* Перейменовано селектор та class */
+.articles-section .article-item:last-child {
     border-bottom: none;
 }
 
-.articles-section .publication-header { /* Перейменовано селектор та class */
+.articles-section .publication-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
 }
 
-.articles-section .publication-title { /* Перейменовано селектор та class */
+.articles-section .publication-title {
     margin: 0;
     flex-grow: 1;
 }
 
-.articles-section .publication-title a { /* Перейменовано селектор та class */
+.articles-section .publication-title a {
     text-decoration: none;
     color: #333;
     display: inline-block;
 }
 
-.articles-section .publication-title a:hover { /* Перейменовано селектор та class */
+.articles-section .publication-title a:hover {
     text-decoration: underline;
 }
 
@@ -155,7 +152,7 @@ body {
 }
 
 .publication-actions {
-    /* Стилі для дій (Редагувати) */
+    /* Дії для статті (Редагувати) */
 }
 
 .edit-btn {
@@ -168,13 +165,13 @@ body {
 }
 
 
-/* --- Стилі для розгорнутої статті (оновлені) --- */
-.articles-section .publication-section { /* Перейменовано селектор та class */
+/* Стилі для розгорнутої статті */
+.articles-section .publication-section {
     display: none;
     margin-top: 10px;
 }
 
-.articles-section .publication-section:target { /* Перейменовано селектор та class */
+.articles-section .publication-section:target {
     display: block;
 }
 
@@ -189,9 +186,10 @@ body {
 }
 
 .publication-content .publication-image {
+    float: left;
     margin-right: 20px;
-    flex-basis: 30%;
-    max-width: 30%;
+    shape-outside: margin-box;
+    max-width: 40%;
 }
 
 .publication-content .publication-image img {
@@ -222,17 +220,17 @@ body {
     margin-top: 1em;
 }
 
-/* --- Стилі для розділу "Публікація" в "Публікаціях" (оновлені для розгортання) --- */
-.publication-publication { /* Перейменовано class на publication-publication */
+/* Стилі для розділу "Публікація" в "Публікаціях" (для розгортання) */
+.publication-publication {
     display: none;
     margin-top: 15px;
 }
 
-.publication-item:target .publication-publication { /* Перейменовано class на publication-publication */
+.publication-item:target .publication-publication {
     display: block;
 }
 
-.publication-publication .publication-content { /* Перейменовано class на publication-publication */
+.publication-publication .publication-content {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -240,7 +238,7 @@ body {
     box-shadow: none;
 }
 
-.publication-publication .publication-content img { /* Перейменовано class на publication-publication */
+.publication-publication .publication-content img {
     max-width: 100%;
     height: auto;
     display: block;
@@ -248,12 +246,12 @@ body {
     border-radius: 5px;
 }
 
-.publication-publication .publication-content p { /* Перейменовано class на publication-publication */
+.publication-publication .publication-content p {
     line-height: 1.6;
     margin-bottom: 1em;
 }
 
-.publication-publication .collapse-btn { /* Перейменовано class на publication-publication */
+.publication-publication .collapse-btn {
     display: inline-block;
     padding: 8px 15px;
     background-color: #6c757d;
@@ -264,40 +262,39 @@ body {
 }
 
 
-/* --- Стилі для розділу "Публікація" в "Статтях" (оновлені для обтікання текстом) --- */
-.article-publication { /* article-publication залишається */
+/* Стилі для розділу "Публікація" в "Статтях" (обтікання текстом) */
+.article-publication {
     display: none;
     margin-top: 10px;
 }
 
-.article-item:target .article-publication { /* article-item та article-publication залишаються */
+.article-item:target .article-publication {
     display: block;
 }
 
 
-.article-publication .publication-content { /* article-publication залишається */
+.article-publication .publication-content {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: flex; /* Залишаємо Flexbox */
-    align-items: flex-start; /* Вирівнювання по верхньому краю */
-    flex-wrap: wrap; /* Додаємо flex-wrap: wrap; щоб дозволити елементам переноситись на новий рядок */
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Дозволити елементам переноситись на новий рядок */
 }
 
-.article-publication .publication-content .publication-image { /* article-publication залишається */
-    margin-bottom: 15px; /* Повертаємо нижній відступ для кращого вигляду, коли зображення зверху */
-    margin-right: 20px; /* Залишаємо відступ справа від зображення до тексту */
+.article-publication .publication-content .publication-image {
+    margin-bottom: 15px;
+    margin-right: 20px;
     text-align: left;
-    /* flex-basis: 40%;  Прибираємо фіксовану ширину flex-basis в основних стилях */
-    max-width: 100%; /* Змінюємо max-width на 100%, щоб зображення могло займати всю ширину контейнера на малих екранах */
-    float: left; /* Додаємо float: left; для обтікання текстом */
-    shape-outside: margin-box; /* Додаємо shape-outside для кращого обтікання, особливо для фігурних зображень (хоча у нас прямокутні) */
-    shape-margin: 15px; /* Відступ між зображенням та обтікаючим текстом */
+    max-width: 100%;
+    float: left;
+    shape-outside: margin-box;
+    shape-margin: 15px;
 }
 
-.article-publication .publication-content .publication-image img { /* article-publication залишається */
+.article-publication .publication-content .publication-image img {
     max-width: 100%;
     height: auto;
     display: block;
@@ -305,19 +302,18 @@ body {
 }
 
 
-.article-publication .publication-content .publication-text { /* article-publication залишається */
-    /* flex-basis: 60%; Прибираємо фіксовану ширину flex-basis в основних стилях */
-    flex-grow: 1; /* Дозволяємо текстовому блоку займати весь вільний простір */
+.article-publication .publication-content .publication-text {
+    flex-grow: 1;
 }
 
 
-.article-publication .publication-content .publication-text p { /* article-publication залишається */
+.article-publication .publication-content .publication-text p {
     margin-bottom: 1em;
     line-height: 1.6;
 }
 
 
-.article-publication .collapse-btn { /* article-publication залишається */
+.article-publication .collapse-btn {
     display: inline-block;
     padding: 8px 15px;
     background-color: #6c757d;
@@ -325,34 +321,34 @@ body {
     text-decoration: none;
     border-radius: 5px;
     margin-top: 1em;
-    clear: both; /* Додаємо clear: both; щоб кнопка "Згорнути" завжди була під обтікаючим контентом */
+    clear: both; /* Кнопка "Згорнути" під обтікаючим контентом */
 }
 
-.footer { /* Ось тут додано text-align: center; */
+.footer {
     padding: 20px 0;
     background-color: #333;
     color: white;
-    text-align: center; /* Додано для вирівнювання футера по центру */
+    text-align: center; /* Вирівнювання футера по центру */
 }
 
-/* Медіа-запит для дуже малих екранів (телефони) */
+/* Медіа-запит для телефонів */
 @media (max-width: 480px) {
     .article-publication .publication-content {
-        flex-direction: column; /* Змінюємо напрямок Flexbox на вертикальний */
-        align-items: center; /* Центруємо елементи по горизонталі */
+        flex-direction: column;
+        align-items: center;
     }
 
     .article-publication .publication-content .publication-image {
-        float: none; /* Відключаємо float: none; */
-        max-width: 80%; /* Зменшуємо максимальну ширину зображення на малих екранах, якщо потрібно */
-        margin-right: 0; /* Забираємо відступ справа */
-        margin-bottom: 20px; /* Додаємо відступ знизу, щоб відокремити від тексту */
-        shape-outside: none; /* Відключаємо shape-outside */
-        shape-margin: 0; /* Відключаємо shape-margin */
-        text-align: center; /* Центруємо зображення */
+        float: none;
+        max-width: 80%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        shape-outside: none;
+        shape-margin: 0;
+        text-align: center;
     }
 
     .article-publication .publication-content .publication-text {
-        text-align: left; /* Вирівнюємо текст по лівому краю на малих екранах */
+        text-align: left;
     }
 }

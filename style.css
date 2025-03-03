@@ -51,31 +51,32 @@ body {
 }
 
 .articles-section h2,
-.my-publications-section h2, /* Додано стиль для заголовку "Мої публікації" */
-.publication-section h2 { /* Додано стиль для заголовків "Публікацій" */
+.publications-section h2, /* Перейменовано селектор */
+.publication-section h2 {
     margin-top: 0;
     border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
-.article-list {
-    display: flex; /* Flexbox для списку статей */
-    flex-wrap: wrap; /* Перенесення статей на новий рядок, якщо не вміщаються */
-    justify-content: space-around; /* Розподіл простору між статтями */
+/* --- Стилі для розділу "Публікації" (колишні "Статті") --- */
+.publications-section .publication-list { /* Перейменовано селектор та class */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.article-item {
+.publications-section .publication-item { /* Перейменовано селектор та class */
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
     background-color: #fff;
     margin-bottom: 20px;
-    width: 300px; /* Фіксована ширина для прикладу, можна змінити */
+    width: 300px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.article-item img {
+.publications-section .publication-item img { /* Перейменовано селектор та class */
     display: block;
     width: 100%;
     height: auto;
@@ -83,21 +84,21 @@ body {
     object-fit: cover;
 }
 
-.article-details { /* Змінено селектор, щоб відповідати HTML */
+.publications-section .publication-details { /* Перейменовано селектор та class */
     padding: 15px;
 }
 
-.article-details h3 { /* Змінено селектор, щоб відповідати HTML */
+.publications-section .publication-details h3 { /* Перейменовано селектор та class */
     margin-top: 0;
     margin-bottom: 10px;
 }
 
-.article-details p { /* Змінено селектор, щоб відповідати HTML */
+.publications-section .publication-details p { /* Перейменовано селектор та class */
     margin-bottom: 15px;
     line-height: 1.5;
 }
 
-.article-meta { /* Змінено селектор, щоб відповідати HTML */
+.publications-section .publication-meta { /* Перейменовано селектор та class */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -105,7 +106,7 @@ body {
     color: #777;
 }
 
-.read-more-link { /* Змінено селектор, щоб відповідати HTML */
+.publications-section .read-more-link { /* Перейменовано селектор та class */
     background-color: #007bff;
     color: white;
     padding: 8px 15px;
@@ -113,70 +114,67 @@ body {
     text-decoration: none;
 }
 
-/* --- Оновлені стилі для розділу "Мої публікації" --- */
-.my-publications-section .my-publication-item {
+/* --- Оновлені стилі для розділу "Статті" (колишні "Мої публікації") --- */
+.articles-section .article-item { /* Перейменовано селектор та class */
     border-bottom: 1px solid #eee;
     padding: 10px 0;
-    /* display: flex;  Видаляємо flexbox з .my-publication-item */
-    /* justify-content: space-between; Видаляємо, бо заголовок тепер окремо */
-    /* align-items: center; Видаляємо, бо заголовок тепер окремо */
-    margin-bottom: 20px; /* Додамо відступ між елементами */
+    margin-bottom: 20px;
 }
 
-.my-publications-section .my-publication-item:last-child {
+.articles-section .article-item:last-child { /* Перейменовано селектор та class */
     border-bottom: none;
 }
 
-.my-publications-section .publication-header { /* Стилі для блоку заголовка */
-    display: flex; /* Flexbox для вирівнювання елементів в рядку */
-    justify-content: space-between; /* Розподіл простору між елементами (заголовок/дата - дії) */
-    align-items: center; /* Вирівнювання по вертикалі */
-    margin-bottom: 10px; /* Відступ від заголовка до контенту публікації */
+.articles-section .publication-header { /* Перейменовано селектор та class */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-.my-publications-section .publication-title { /* Стилі для заголовка */
-    margin: 0; /* Забираємо стандартні відступи заголовка */
-    flex-grow: 1; /* Заголовок займає вільний простір зліва */
+.articles-section .publication-title { /* Перейменовано селектор та class */
+    margin: 0;
+    flex-grow: 1;
 }
 
-.my-publications-section .publication-title a { /* Стилі для посилання-заголовка */
+.articles-section .publication-title a { /* Перейменовано селектор та class */
     text-decoration: none;
     color: #333;
-    display: inline-block; /* Змінюємо на inline-block, щоб заголовок не займав всю ширину, а тільки ширину тексту */
+    display: inline-block;
 }
 
-.my-publications-section .publication-title a:hover {
+.articles-section .publication-title a:hover { /* Перейменовано селектор та class */
     text-decoration: underline;
 }
 
 
-.publication-date { /* Стилі для дати */
+.publication-date {
     font-size: 0.9em;
     color: #777;
-    margin-right: 15px; /* Відступ від дати до дій (Редагувати) */
+    margin-right: 15px;
 }
 
-.publication-actions { /* Стилі для дій (Редагувати) */
-    /* Нічого поки що не змінюємо, стилі з попередньої версії */
+.publication-actions {
+    /* Стилі для дій (Редагувати) */
 }
 
-.edit-btn { /* Стилі для кнопки "Редагувати" */
+.edit-btn {
     background-color: #28a745;
     color: white;
     padding: 5px 10px;
     border-radius: 3px;
     text-decoration: none;
-    margin-right: 10px; /* Залишаємо відступ справа, хоча зараз там нічого немає */
+    margin-right: 10px;
 }
 
 
-/* --- Стилі для розгорнутої публікації (оновлені) --- */
-.my-publications-section .publication-section {
+/* --- Стилі для розгорнутої статті (оновлені) --- */
+.articles-section .publication-section { /* Перейменовано селектор та class */
     display: none;
     margin-top: 10px;
 }
 
-.my-publications-section .publication-section:target {
+.articles-section .publication-section:target { /* Перейменовано селектор та class */
     display: block;
 }
 
@@ -190,36 +188,143 @@ body {
     align-items: flex-start; /* Вирівнювання елементів по верхньому краю */
 }
 
-.publication-content .publication-image { /* Стилі для контейнера зображення */
-    margin-right: 20px; /* Відступ справа від зображення до тексту */
-    flex-basis: 30%; /* Займає 30% ширини контейнера */
-    max-width: 30%; /* Максимальна ширина 30% */
+.publication-content .publication-image {
+    margin-right: 20px;
+    flex-basis: 30%;
+    max-width: 30%;
 }
 
-.publication-content .publication-image img { /* Стилі для зображення */
+.publication-content .publication-image img {
     max-width: 100%;
     height: auto;
     display: block;
-    border-radius: 5px; /* Заокруглення для зображення */
+    border-radius: 5px;
 }
 
-.publication-content .publication-text { /* Стилі для контейнера тексту та кнопки */
-    flex-basis: 70%; /* Займає 70% ширини контейнера */
+.publication-content .publication-text {
+    flex-basis: 70%;
 }
 
 
-.publication-content .publication-text p { /* Стилі для тексту публікації */
+.publication-content .publication-text p {
     margin-bottom: 1em;
-    line-height: 1.6; /* Збільшимо міжрядковий інтервал для кращого читання */
+    line-height: 1.6;
 }
 
 
-.collapse-btn { /* Стилі для кнопки "Згорнути" - без змін */
+.collapse-btn {
     display: inline-block;
     padding: 8px 15px;
     background-color: #6c757d;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 1em; /* Відступ зверху від тексту */
+    margin-top: 1em;
+}
+
+/* --- Стилі для розділу "Публікація" в "Публікаціях" (оновлені для розгортання) --- */
+.publication-publication { /* Перейменовано class на publication-publication */
+    display: none;
+    margin-top: 15px;
+}
+
+.publication-item:target .publication-publication { /* Перейменовано class на publication-publication */
+    display: block;
+}
+
+.publication-publication .publication-content { /* Перейменовано class на publication-publication */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: none;
+}
+
+.publication-publication .publication-content img { /* Перейменовано class на publication-publication */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1em;
+    border-radius: 5px;
+}
+
+.publication-publication .publication-content p { /* Перейменовано class на publication-publication */
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+.publication-publication .collapse-btn { /* Перейменовано class на publication-publication */
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #6c757d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1em;
+}
+
+
+/* --- Стилі для розділу "Публікація" в "Статтях" (оновлені) --- */
+.article-publication { /* article-publication залишається */
+    display: none;
+    margin-top: 10px;
+}
+
+.article-item:target .article-publication { /* article-item та article-publication залишаються */
+    display: block;
+}
+
+
+.article-publication .publication-content { /* article-publication залишається */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Трохи збільшимо заокруглення для узгодженості */
+    padding: 20px; /* Збільшимо відступи для кращого вигляду */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Додамо тінь, як у блоках "Публікацій" */
+    display: flex; /* Змінюємо на flex для обтікання текстом */
+    align-items: flex-start; /* Вирівнювання по верхньому краю */
+}
+
+.article-publication .publication-content .publication-image { /* article-publication залишається */
+    margin-bottom: 0; /* Забираємо нижній відступ, бо зображення буде збоку від тексту */
+    margin-right: 20px; /* Додаємо відступ справа від зображення до тексту */
+    text-align: left; /* Вирівнювання тексту по лівому краю всередині блоку зображення (не обов'язково, але може бути корисним) */
+    flex-basis: 40%; /* Задаємо ширину для зображення, наприклад 40% від контейнера */
+    max-width: 40%; /* Обмежуємо максимальну ширину, щоб не було занадто великим на великих екранах */
+}
+
+.article-publication .publication-content .publication-image img { /* article-publication залишається */
+    max-width: 100%; /* Зображення займає всю ширину батьківського блоку .publication-image */
+    height: auto;
+    display: block; /* Переконуємось, що це блоковий елемент */
+    border-radius: 5px; /* Залишаємо заокруглення */
+}
+
+
+.article-publication .publication-content .publication-text { /* article-publication залишається */
+    flex-basis: 60%; /* Задаємо ширину для текстового блоку, наприклад 60% від контейнера */
+}
+
+
+.article-publication .publication-content .publication-text p { /* article-publication залишається */
+    margin-bottom: 1em;
+    line-height: 1.6;
+}
+
+
+.article-publication .collapse-btn { /* article-publication залишається */
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #6c757d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1em;
+}
+
+.footer { /* Ось тут додано text-align: center; */
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+    text-align: center; /* Додано для вирівнювання футера по центру */
 }

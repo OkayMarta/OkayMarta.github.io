@@ -1,0 +1,225 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.navigation {
+    background-color: #eee;
+    padding: 10px 0;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex; /* Flexbox для навігації */
+    justify-content: center; /* Центрування елементів навігації */
+}
+
+.navigation li {
+    margin: 0 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    color: white; /* Змінюємо колір посилань навігації на білий, бо фон шапки темний */
+}
+.navigation {
+    background-color: #333; /* Робимо фон навігації таким же, як і шапка, для цілісності дизайну */
+}
+
+
+.content {
+    max-width: 960px;
+    margin: 20px auto; /* Центрування блоку контенту по горизонталі */
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.articles-section h2,
+.my-publications-section h2, /* Додано стиль для заголовку "Мої публікації" */
+.publication-section h2 { /* Додано стиль для заголовків "Публікацій" */
+    margin-top: 0;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.article-list {
+    display: flex; /* Flexbox для списку статей */
+    flex-wrap: wrap; /* Перенесення статей на новий рядок, якщо не вміщаються */
+    justify-content: space-around; /* Розподіл простору між статтями */
+}
+
+.article-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    margin-bottom: 20px;
+    width: 300px; /* Фіксована ширина для прикладу, можна змінити */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.article-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 600 / 400;
+    object-fit: cover;
+}
+
+.article-details { /* Змінено селектор, щоб відповідати HTML */
+    padding: 15px;
+}
+
+.article-details h3 { /* Змінено селектор, щоб відповідати HTML */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.article-details p { /* Змінено селектор, щоб відповідати HTML */
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.article-meta { /* Змінено селектор, щоб відповідати HTML */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.read-more-link { /* Змінено селектор, щоб відповідати HTML */
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* --- Оновлені стилі для розділу "Мої публікації" --- */
+.my-publications-section .my-publication-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    /* display: flex;  Видаляємо flexbox з .my-publication-item */
+    /* justify-content: space-between; Видаляємо, бо заголовок тепер окремо */
+    /* align-items: center; Видаляємо, бо заголовок тепер окремо */
+    margin-bottom: 20px; /* Додамо відступ між елементами */
+}
+
+.my-publications-section .my-publication-item:last-child {
+    border-bottom: none;
+}
+
+.my-publications-section .publication-header { /* Стилі для блоку заголовка */
+    display: flex; /* Flexbox для вирівнювання елементів в рядку */
+    justify-content: space-between; /* Розподіл простору між елементами (заголовок/дата - дії) */
+    align-items: center; /* Вирівнювання по вертикалі */
+    margin-bottom: 10px; /* Відступ від заголовка до контенту публікації */
+}
+
+.my-publications-section .publication-title { /* Стилі для заголовка */
+    margin: 0; /* Забираємо стандартні відступи заголовка */
+    flex-grow: 1; /* Заголовок займає вільний простір зліва */
+}
+
+.my-publications-section .publication-title a { /* Стилі для посилання-заголовка */
+    text-decoration: none;
+    color: #333;
+    display: inline-block; /* Змінюємо на inline-block, щоб заголовок не займав всю ширину, а тільки ширину тексту */
+}
+
+.my-publications-section .publication-title a:hover {
+    text-decoration: underline;
+}
+
+
+.publication-date { /* Стилі для дати */
+    font-size: 0.9em;
+    color: #777;
+    margin-right: 15px; /* Відступ від дати до дій (Редагувати) */
+}
+
+.publication-actions { /* Стилі для дій (Редагувати) */
+    /* Нічого поки що не змінюємо, стилі з попередньої версії */
+}
+
+.edit-btn { /* Стилі для кнопки "Редагувати" */
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    margin-right: 10px; /* Залишаємо відступ справа, хоча зараз там нічого немає */
+}
+
+
+/* --- Стилі для розгорнутої публікації (оновлені) --- */
+.my-publications-section .publication-section {
+    display: none;
+    margin-top: 10px;
+}
+
+.my-publications-section .publication-section:target {
+    display: block;
+}
+
+.publication-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+    display: flex; /* Flexbox для двоколонкової структури */
+    align-items: flex-start; /* Вирівнювання елементів по верхньому краю */
+}
+
+.publication-content .publication-image { /* Стилі для контейнера зображення */
+    margin-right: 20px; /* Відступ справа від зображення до тексту */
+    flex-basis: 30%; /* Займає 30% ширини контейнера */
+    max-width: 30%; /* Максимальна ширина 30% */
+}
+
+.publication-content .publication-image img { /* Стилі для зображення */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px; /* Заокруглення для зображення */
+}
+
+.publication-content .publication-text { /* Стилі для контейнера тексту та кнопки */
+    flex-basis: 70%; /* Займає 70% ширини контейнера */
+}
+
+
+.publication-content .publication-text p { /* Стилі для тексту публікації */
+    margin-bottom: 1em;
+    line-height: 1.6; /* Збільшимо міжрядковий інтервал для кращого читання */
+}
+
+
+.collapse-btn { /* Стилі для кнопки "Згорнути" - без змін */
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #6c757d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1em; /* Відступ зверху від тексту */
+}

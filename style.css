@@ -264,7 +264,7 @@ body {
 }
 
 
-/* --- Стилі для розділу "Публікація" в "Статтях" (оновлені) --- */
+/* --- Стилі для розділу "Публікація" в "Статтях" (оновлені для обтікання текстом) --- */
 .article-publication { /* article-publication залишається */
     display: none;
     margin-top: 10px;
@@ -278,31 +278,36 @@ body {
 .article-publication .publication-content { /* article-publication залишається */
     background-color: #f9f9f9;
     border: 1px solid #ddd;
-    border-radius: 8px; /* Трохи збільшимо заокруглення для узгодженості */
-    padding: 20px; /* Збільшимо відступи для кращого вигляду */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Додамо тінь, як у блоках "Публікацій" */
-    display: flex; /* Змінюємо на flex для обтікання текстом */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex; /* Залишаємо Flexbox */
     align-items: flex-start; /* Вирівнювання по верхньому краю */
+    flex-wrap: wrap; /* Додаємо flex-wrap: wrap; щоб дозволити елементам переноситись на новий рядок */
 }
 
 .article-publication .publication-content .publication-image { /* article-publication залишається */
-    margin-bottom: 0; /* Забираємо нижній відступ, бо зображення буде збоку від тексту */
-    margin-right: 20px; /* Додаємо відступ справа від зображення до тексту */
-    text-align: left; /* Вирівнювання тексту по лівому краю всередині блоку зображення (не обов'язково, але може бути корисним) */
-    flex-basis: 40%; /* Задаємо ширину для зображення, наприклад 40% від контейнера */
-    max-width: 40%; /* Обмежуємо максимальну ширину, щоб не було занадто великим на великих екранах */
+    margin-bottom: 15px; /* Повертаємо нижній відступ для кращого вигляду, коли зображення зверху */
+    margin-right: 20px; /* Залишаємо відступ справа від зображення до тексту */
+    text-align: left;
+    /* flex-basis: 40%;  Прибираємо фіксовану ширину flex-basis в основних стилях */
+    max-width: 100%; /* Змінюємо max-width на 100%, щоб зображення могло займати всю ширину контейнера на малих екранах */
+    float: left; /* Додаємо float: left; для обтікання текстом */
+    shape-outside: margin-box; /* Додаємо shape-outside для кращого обтікання, особливо для фігурних зображень (хоча у нас прямокутні) */
+    shape-margin: 15px; /* Відступ між зображенням та обтікаючим текстом */
 }
 
 .article-publication .publication-content .publication-image img { /* article-publication залишається */
-    max-width: 100%; /* Зображення займає всю ширину батьківського блоку .publication-image */
+    max-width: 100%;
     height: auto;
-    display: block; /* Переконуємось, що це блоковий елемент */
-    border-radius: 5px; /* Залишаємо заокруглення */
+    display: block;
+    border-radius: 5px;
 }
 
 
 .article-publication .publication-content .publication-text { /* article-publication залишається */
-    flex-basis: 60%; /* Задаємо ширину для текстового блоку, наприклад 60% від контейнера */
+    /* flex-basis: 60%; Прибираємо фіксовану ширину flex-basis в основних стилях */
+    flex-grow: 1; /* Дозволяємо текстовому блоку займати весь вільний простір */
 }
 
 
@@ -320,6 +325,7 @@ body {
     text-decoration: none;
     border-radius: 5px;
     margin-top: 1em;
+    clear: both; /* Додаємо clear: both; щоб кнопка "Згорнути" завжди була під обтікаючим контентом */
 }
 
 .footer { /* Ось тут додано text-align: center; */
@@ -327,4 +333,26 @@ body {
     background-color: #333;
     color: white;
     text-align: center; /* Додано для вирівнювання футера по центру */
+}
+
+/* Медіа-запит для дуже малих екранів (телефони) */
+@media (max-width: 480px) {
+    .article-publication .publication-content {
+        flex-direction: column; /* Змінюємо напрямок Flexbox на вертикальний */
+        align-items: center; /* Центруємо елементи по горизонталі */
+    }
+
+    .article-publication .publication-content .publication-image {
+        float: none; /* Відключаємо float: none; */
+        max-width: 80%; /* Зменшуємо максимальну ширину зображення на малих екранах, якщо потрібно */
+        margin-right: 0; /* Забираємо відступ справа */
+        margin-bottom: 20px; /* Додаємо відступ знизу, щоб відокремити від тексту */
+        shape-outside: none; /* Відключаємо shape-outside */
+        shape-margin: 0; /* Відключаємо shape-margin */
+        text-align: center; /* Центруємо зображення */
+    }
+
+    .article-publication .publication-content .publication-text {
+        text-align: left; /* Вирівнюємо текст по лівому краю на малих екранах */
+    }
 }

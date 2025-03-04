@@ -1,354 +1,243 @@
+/* Основні стилі для body */
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: sans-serif; /* Шрифт за замовчуванням */
+    margin: 0; /* Відсутні зовнішні відступи */
+    padding: 0; /* Відсутні внутрішні відступи */
     background-color: #f4f4f4;
-    color: #333;
+    color: #333; /* Основний колір тексту*/
 }
 
+/* Стилі для шапки сайту */
 .header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
+    background-color: #333; /* Фон шапки */
+    color: white; /* Білий колір тексту в шапці */
+    text-align: center; /* Вирівнювання тексту по центру */
+    padding: 20px 0; /* Внутрішні відступи зверху та знизу */
 }
 
+/* Стилі для навігаційного меню */
 .navigation {
     background-color: #333; /* Фон навігації як у шапки */
-    padding: 10px 0;
+    padding: 10px 0; /* Внутрішні відступи зверху та знизу */
 }
 
 .navigation ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    display: flex; /* Flexbox для навігації */
-    justify-content: center; /* Центрування елементів навігації */
+    list-style: none; /* Прибираємо маркери списку */
+    padding: 0; /* Відсутні внутрішні відступи */
+    margin: 0; /* Відсутні зовнішні відступи */
+    text-align: center; /* Вирівнювання тексту по центру */
+    display: flex; /* Використовуємо flexbox для горизонтального розташування елементів */
+    justify-content: center; /* Центрування елементів по горизонталі */
 }
 
 .navigation li {
-    margin: 0 20px;
+    margin: 0 20px; /* Відступи з боків між елементами навігації */
 }
 
 .navigation a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    color: white;
+    text-decoration: none; /* Прибираємо підкреслення посилань */
+    color: #333; /* Колір тексту посилань (спочатку задано помилково, потім перезаписано на білий нижче) */
+    font-weight: bold; /* Жирний шрифт для посилань навігації */
+    color: white; /* Білий колір тексту посилань навігації */
 }
 
-
+/* Стилі для основного контенту сторінки */
 .content {
-    max-width: 960px;
-    margin: 20px auto; /* Центрування блоку контенту */
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 960px; /* Максимальна ширина контенту */
+    margin: 20px auto; /* Відступи зверху та знизу, автоматичне центрування по горизонталі */
+    padding: 20px; /* Внутрішні відступи */
+    background-color: white; /* Білий фон контенту */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тінь для блоку контенту */
 }
 
+/* Заголовки секцій (Статті, Публікації) */
 .articles-section h2,
 .publications-section h2,
 .publication-section h2 {
-    margin-top: 0;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin-top: 0; /* Відсутній верхній відступ заголовка */
+    border-bottom: 2px solid #ddd; /* Лінія під заголовком */
+    padding-bottom: 10px; /* Відступ знизу від лінії */
+    margin-bottom: 20px; /* Відступ знизу від заголовка */
 }
 
-/* Стилі для розділу "Публікації" */
+
+/* --- Стилі для розділу "Публікації" --- */
 .publications-section .publication-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: flex; /* Flexbox для публікацій */
+    flex-wrap: wrap; /* Дозволяємо переносити публікації на новий рядок, якщо не вміщаються */
+    justify-content: space-around; /* Розподіл публікацій по ширині контейнера з відступами між ними */
 }
 
 .publications-section .publication-item {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    background-color: #fff;
-    margin-bottom: 20px;
-    width: 300px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd; /* Тонка сіра рамка */
+    border-radius: 5px; /* Закруглені кути рамки */
+    overflow: hidden; /* Приховуємо контент, що виходить за межі рамки */
+    background-color: #fff; /* Білий фон елемента публікації */
+    margin-bottom: 20px; /* Відступ знизу між публікаціями */
+    width: 300px; /* Фіксована ширина для кожної публікації */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Невелика тінь для елементів публікацій */
 }
 
 .publications-section .publication-item img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 600 / 400;
-    object-fit: cover;
+    display: block; /* Зображення як блоковий елемент, щоб займало всю ширину контейнера */
+    width: 100%; /* Зображення на всю ширину контейнера */
+    height: auto; /* Автоматична висота для збереження пропорцій */
+    aspect-ratio: 600 / 400; /* Співвідношення сторін зображення */
+    object-fit: cover; /* Обрізаємо зображення для заповнення контейнера зі збереженням пропорцій */
 }
 
 .publications-section .publication-details {
-    padding: 15px;
+    padding: 15px; /* Внутрішні відступи для деталей публікації (текст) */
 }
 
 .publications-section .publication-details h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
+    margin-top: 0; /* Відсутній верхній відступ заголовка публікації */
+    margin-bottom: 10px; /* Відступ знизу від заголовка публікації */
 }
 
 .publications-section .publication-details p {
-    margin-bottom: 15px;
-    line-height: 1.5;
+    margin-bottom: 15px; /* Відступ знизу для абзаців опису публікації */
+    line-height: 1.5; /* Міжрядковий інтервал для тексту опису */
 }
 
 .publications-section .publication-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9em;
-    color: #777;
+    display: flex; /* Flexbox для метаданих публікації (дата) */
+    justify-content: space-between; /* Розподіл елементів метаданих по краях контейнера */
+    align-items: center; /* Вирівнювання елементів по вертикалі по центру */
+    font-size: 0.9em; /* Менший розмір шрифту для метаданих */
+    color: #777; /* Сірий колір тексту метаданих */
 }
 
 .publications-section .read-more-link {
-    background-color: #007bff;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 5px;
-    text-decoration: none;
+    background-color: #007bff; /* Синій фон посилання "Читати далі" */
+    color: white; /* Білий колір тексту посилання "Читати далі" */
+    padding: 8px 15px; /* Внутрішні відступи для посилання */
+    border-radius: 5px; /* Закруглені кути посилання */
+    text-decoration: none; /* Прибираємо підкреслення посилання */
 }
 
-/* Стилі для розділу "Статті" */
+
+/* --- Стилі для розділу "Статті" --- */
 .articles-section .article-item {
-    border-bottom: 1px solid #eee;
-    padding: 10px 0;
-    margin-bottom: 20px;
+    border-bottom: 1px solid #eee; /* Тонка сіра лінія-роздільник між статтями */
+    padding: 10px 0; /* Внутрішні відступи зверху та знизу для статті */
+    margin-bottom: 20px; /* Відступ знизу від статті */
 }
 
 .articles-section .article-item:last-child {
-    border-bottom: none;
+    border-bottom: none; /* Прибираємо лінію-роздільник для останньої статті */
 }
 
 .articles-section .publication-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+    display: flex; /* Flexbox для заголовка статті */
+    justify-content: space-between; /* Розподіл заголовка та дій по краях контейнера */
+    align-items: center; /* Вирівнювання елементів по вертикалі по центру */
+    margin-bottom: 10px; /* Відступ знизу від заголовка статті */
 }
 
 .articles-section .publication-title {
-    margin: 0;
-    flex-grow: 1;
+    margin: 0; /* Відсутні відступи для заголовка статті */
+    flex-grow: 1; /* Заголовок займає вільний простір */
 }
 
 .articles-section .publication-title a {
-    text-decoration: none;
-    color: #333;
-    display: inline-block;
+    text-decoration: none; /* Прибираємо підкреслення посилання заголовка статті */
+    color: #333; /* Темно-сірий колір тексту заголовка статті */
+    display: inline-block; /* Посилання як вбудовано-блоковий елемент */
 }
 
 .articles-section .publication-title a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Підкреслення посилання при наведенні */
 }
 
-
 .publication-date {
-    font-size: 0.9em;
-    color: #777;
-    margin-right: 15px;
+    font-size: 0.9em; /* Менший розмір шрифту для дати публікації */
+    color: #777; /* Сірий колір тексту дати публікації */
+    margin-right: 15px; /* Відступ справа від дати */
 }
 
 .publication-actions {
-    /* Дії для статті (Редагувати) */
+    /* Контейнер для дій над статтею (кнопки) */
 }
 
 .edit-btn {
-    background-color: #28a745;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 3px;
-    text-decoration: none;
-    margin-right: 10px;
-}
-
-
-/* Стилі для розгорнутої статті */
-.articles-section .publication-section {
-    display: none;
-    margin-top: 10px;
-}
-
-.articles-section .publication-section:target {
-    display: block;
+    background-color: #28a745; /* Зелений фон кнопки "Редагувати" */
+    color: white; /* Білий колір тексту кнопки "Редагувати" */
+    padding: 5px 10px; /* Внутрішні відступи кнопки "Редагувати" */
+    border-radius: 3px; /* Закруглені кути кнопки "Редагувати" */
+    text-decoration: none; /* Прибираємо підкреслення посилання кнопки "Редагувати" */
+    margin-right: 10px; /* Відступ справа від кнопки "Редагувати" */
 }
 
 .publication-content {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    border: 1px solid #ddd;
-    display: flex; /* Flexbox для двоколонкової структури */
-    align-items: flex-start; /* Вирівнювання елементів по верхньому краю */
+    background-color: #fff; /* Білий фон контенту статті */
+    border-radius: 8px; /* Закруглені кути блоку контенту статті */
+    padding: 20px; /* Внутрішні відступи блоку контенту статті */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Невелика тінь для блоку контенту статті */
+    border: 1px solid #ddd; /* Тонка сіра рамка для блоку контенту статті */
+    display: block; /* Блокове відображення для розміщення зображення над текстом */
 }
 
 .publication-content .publication-image {
-    float: left;
-    margin-right: 20px;
-    shape-outside: margin-box;
-    max-width: 40%;
+    margin-right: 0; /* Відсутній відступ справа від зображення */
+    max-width: 100%; /* Максимальна ширина зображення - 100% контейнера */
+    margin-bottom: 20px; /* Відступ знизу від зображення до тексту */
 }
 
 .publication-content .publication-image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 5px;
+    max-width: 100%; /* Максимальна ширина зображення - 100% батьківського елемента */
+    height: auto; /* Автоматична висота для збереження пропорцій */
+    display: block; /* Блокове відображення зображення */
+    border-radius: 5px; /* Закруглені кути зображення */
 }
 
 .publication-content .publication-text {
-    flex-basis: 70%;
+    flex-basis: 100%; /* Текстовий блок займає всю ширину контейнера */
 }
-
 
 .publication-content .publication-text p {
-    margin-bottom: 1em;
-    line-height: 1.6;
+    margin-bottom: 1em; /* Відступ знизу для абзаців тексту статті */
+    line-height: 1.6; /* Міжрядковий інтервал для тексту статті */
 }
-
 
 .collapse-btn {
-    display: inline-block;
-    padding: 8px 15px;
-    background-color: #6c757d;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 1em;
-}
-
-/* Стилі для розділу "Публікація" в "Публікаціях" (для розгортання) */
-.publication-publication {
-    display: none;
-    margin-top: 15px;
-}
-
-.publication-item:target .publication-publication {
-    display: block;
-}
-
-.publication-publication .publication-content {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    box-shadow: none;
-}
-
-.publication-publication .publication-content img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 1em;
-    border-radius: 5px;
-}
-
-.publication-publication .publication-content p {
-    line-height: 1.6;
-    margin-bottom: 1em;
-}
-
-.publication-publication .collapse-btn {
-    display: inline-block;
-    padding: 8px 15px;
-    background-color: #6c757d;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 1em;
+    display: inline-block; /* Кнопка "Повернутися до списку" як вбудовано-блоковий елемент */
+    padding: 8px 15px; /* Внутрішні відступи кнопки */
+    background-color: #6c757d; /* Сірий фон кнопки */
+    color: #fff; /* Білий колір тексту кнопки */
+    text-decoration: none; /* Прибираємо підкреслення посилання кнопки */
+    border-radius: 5px; /* Закруглені кути кнопки */
+    margin-top: 1em; /* Відступ зверху від кнопки */
 }
 
 
-/* Стилі для розділу "Публікація" в "Статтях" (обтікання текстом) */
-.article-publication {
-    display: none;
-    margin-top: 10px;
-}
-
-.article-item:target .article-publication {
-    display: block;
-}
-
-
-.article-publication .publication-content {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap; /* Дозволити елементам переноситись на новий рядок */
-}
-
-.article-publication .publication-content .publication-image {
-    margin-bottom: 15px;
-    margin-right: 20px;
-    text-align: left;
-    max-width: 100%;
-    float: left;
-    shape-outside: margin-box;
-    shape-margin: 15px;
-}
-
-.article-publication .publication-content .publication-image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 5px;
-}
-
-
-.article-publication .publication-content .publication-text {
-    flex-grow: 1;
-}
-
-
-.article-publication .publication-content .publication-text p {
-    margin-bottom: 1em;
-    line-height: 1.6;
-}
-
-
-.article-publication .collapse-btn {
-    display: inline-block;
-    padding: 8px 15px;
-    background-color: #6c757d;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 1em;
-    clear: both; /* Кнопка "Згорнути" під обтікаючим контентом */
-}
-
+/* Стилі для футера сайту */
 .footer {
-    padding: 20px 0;
-    background-color: #333;
-    color: white;
-    text-align: center; /* Вирівнювання футера по центру */
+    padding: 20px 0; /* Внутрішні відступи зверху та знизу */
+    background-color: #333; /* Темно-сірий фон футера */
+    color: white; /* Білий колір тексту футера */
+    text-align: center; /* Вирівнювання тексту по центру футера */
 }
 
-/* Медіа-запит для телефонів */
+
+/* --- Медіа-запити для адаптивного дизайну --- */
+/* Для екранів телефонів (максимальна ширина 480px) */
 @media (max-width: 480px) {
     .article-publication .publication-content {
-        flex-direction: column;
-        align-items: center;
+        align-items: flex-start; /* Вирівнювання елементів по початку flex-контейнера */
     }
 
     .article-publication .publication-content .publication-image {
-        float: none;
-        max-width: 80%;
-        margin-right: 0;
-        margin-bottom: 20px;
-        shape-outside: none;
-        shape-margin: 0;
-        text-align: center;
+        float: left; /* Обтікання зображення текстом зліва */
+        max-width: 80%; /* Максимальна ширина зображення 80% контейнера */
+        margin-right: 20px; /* Відступ справа від зображення */
+        margin-bottom: 20px; /* Відступ знизу від зображення */
+        shape-outside: margin-box; /* Форма обтікання текстом - прямокутна область навколо зображення */
+        shape-margin: 15px; /* Відступ обтікання від форми зображення */
+        text-align: left; /* Вирівнювання тексту по лівому краю */
     }
 
     .article-publication .publication-content .publication-text {
-        text-align: left;
+        text-align: left; /* Вирівнювання тексту по лівому краю */
     }
 }

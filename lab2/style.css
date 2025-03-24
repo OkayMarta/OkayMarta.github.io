@@ -64,7 +64,7 @@ body {
 
 /* Секція "Про мене" */
 .blogger-info-section {
-    padding: 30px;
+    padding: 20px;
     margin-bottom: 30px;
     background-color: #fff;
     border-radius: 10px;
@@ -79,18 +79,20 @@ body {
 
 .blogger-info-content {
     display: flex; /* Flexbox для розташування тексту та фото поруч */
+    flex-direction: column; /* Для мобільних - колонка */
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .blogger-text {
-    flex: 1; /* Текст займає вільне місце */
-    padding-right: 20px;
+    width: 100%; /* На всю ширину */
+    padding-right: 0;
+    margin-bottom: 20px; /* Відступ між текстом і фото */
 }
 
 .blogger-photo-container {
-    width: 300px;
-    flex-shrink: 0;
+    width: 80%;
+    max-width: 300px; 
 }
 
 .blogger-photo {
@@ -103,26 +105,23 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Медіа-запит для малих екранів */
-@media (max-width: 768px) {
-    .articles-section .publication-header {
-        flex-direction: column; /* Вертикальне розташування елементів на малих екранах */
-        align-items: flex-start;
+/* Медіа-запит для більших екранів */
+@media (min-width: 768px) {
+    .blogger-info-content {
+        flex-direction: row;
+        justify-content: space-between;
     }
 
-    .articles-section .publication-title {
-        margin-bottom: 10px;
+    .blogger-text {
+        padding-left: 20px;
+        margin-bottom: 0;
+        flex: 1;
     }
 
-    .publication-date,
-    .publication-actions {
-        margin-right: 0;
-        margin-bottom: 5px;
-    }
-
-    .like-btn {
-        padding: 5px 8px;
-        font-size: 0.9em;
+    .blogger-photo-container {
+        max-width: 300px;
+        margin-right: 20px;
+        margin-left: 0;
     }
 }
 
@@ -144,9 +143,22 @@ body {
 
 .future-travels-list {
     display: grid; /* Grid layout для списку планів подорожей */
-    grid-template-columns: repeat(4, 1fr); /* 4 колонки в сітці */
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки на ПК */
     gap: 25px;
 }
+
+@media (max-width: 992px) {
+    .future-travels-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+    }
+}
+
+@media (max-width: 768px) {
+    .future-travels-list {
+        grid-template-columns: 1fr; /* 1 колонка на телефонах */
+    }
+}
+
 
 .travel-item {
     text-align: center;
@@ -275,6 +287,19 @@ body {
     background-color: #0056b3;
 }
 
+/* Медіа-запити для адаптивності */
+@media (max-width: 992px) {
+    .publications-section .publication-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+    }
+}
+
+@media (max-width: 768px) {
+    .publications-section .publication-list {
+        grid-template-columns: 1fr; /* 1 колонка на телефонах */
+    }
+}
+
 /* --- Стилі для розділу "Статті" --- */
 .articles-section .article-item {
     border-bottom: 1px solid #eee;
@@ -302,6 +327,8 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    flex-direction: row; /* Явне задання напрямку */
+    flex-wrap: wrap;     /* Дозволяємо перенесення на новий рядок */
 }
 
 .articles-section .publication-title {
@@ -325,6 +352,19 @@ body {
     font-size: 0.9em;
     color: #777;
     margin-right: 20px;
+    /* Зменшуємо відступ на малих екранах */
+    @media (max-width: 768px) {
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+/* Додамо медіа-запит для зменшення розміру кнопки на малих екранах, якщо потрібно */
+@media (max-width: 480px) { /* Можна підібрати інше значення */
+    .like-btn {
+        padding: 5px 10px; /* Зменшуємо відступи */
+        font-size: 0.8em;  /* Зменшуємо розмір шрифта (за потреби) */
+    }
 }
 
 .publication-actions {

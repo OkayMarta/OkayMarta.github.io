@@ -1,0 +1,526 @@
+/* Основні стилі для body */
+body {
+    font-family: Arial, sans-serif; /* Встановлюємо шрифт Arial для кращої читабельності */
+    margin: 0; /* Прибираємо стандартні відступи body */
+    padding: 0; /* Прибираємо стандартні внутрішні відступи body */
+    background-color: #f8f8f8; /* Задаємо світло-сірий фон сторінки */
+    color: #333; /* Встановлюємо темно-сірий колір тексту */
+    line-height: 1.6; /* Покращуємо міжрядковий інтервал для тексту */
+}
+
+/* Стилі для шапки сайту */
+.header {
+    background-color: #444; /* Темно-сірий фон для шапки */
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 20px;
+}
+
+/* Стилі для навігаційного меню */
+.navigation {
+    background-color: #333; /* Темно-сірий фон для навігації */
+    padding: 15px 0;
+    margin-bottom: 25px;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex; /* Flexbox для горизонтального меню */
+    justify-content: center;
+    gap: 30px; /* Проміжок між пунктами меню */
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease; /* Плавний перехід кольору при наведенні */
+    padding: 10px 15px; /* Збільшуємо клікабельну область посилань */
+    border-radius: 5px;
+}
+
+.navigation a:hover {
+    color: #f0f0f0;
+    background-color: #555; /* Виділення пункту меню при наведенні */
+    text-decoration: none;
+}
+
+/* Стилі для основного контенту сторінки */
+.content {
+    max-width: 1200px; /* Обмежуємо ширину контенту для читабельності */
+    margin: 20px auto; /* Центруємо контент на сторінці */
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Легка тінь для блоку контенту */
+    border-radius: 8px;
+}
+
+/* --- Стилі для головної сторінки (index.html) --- */
+
+/* Секція "Про мене" */
+.blogger-info-section {
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.blogger-info-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #444;
+}
+
+.blogger-info-content {
+    display: flex; /* Flexbox для розташування тексту та фото поруч */
+    align-items: center;
+    gap: 30px;
+}
+
+.blogger-text {
+    flex: 1; /* Текст займає вільне місце */
+    padding-right: 20px;
+}
+
+.blogger-photo-container {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.blogger-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Кругла форма фото */
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Медіа-запит для малих екранів */
+@media (max-width: 768px) {
+    .articles-section .publication-header {
+        flex-direction: column; /* Вертикальне розташування елементів на малих екранах */
+        align-items: flex-start;
+    }
+
+    .articles-section .publication-title {
+        margin-bottom: 10px;
+    }
+
+    .publication-date,
+    .publication-actions {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .like-btn {
+        padding: 5px 8px;
+        font-size: 0.9em;
+    }
+}
+
+
+/* Секція "Куди я планую поїхати" */
+.future-travels-section {
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.future-travels-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #444;
+}
+
+.future-travels-list {
+    display: grid; /* Grid layout для списку планів подорожей */
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки в сітці */
+    gap: 25px;
+}
+
+.travel-item {
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анімація при наведенні */
+}
+
+.travel-item:hover {
+    transform: translateY(-5px); /* Ефект підняття блоку при наведенні */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+.travel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0; /* Заокруглення тільки зверху */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.travel-item p {
+    padding: 15px;
+    margin: 0;
+}
+
+/* Медіа-запит для планшетів */
+@media (max-width: 992px) {
+    .publications-section .publication-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+    }
+}
+
+/* Медіа-запит для мобільних телефонів */
+@media (max-width: 768px) {
+    .publications-section .publication-list {
+        grid-template-columns: 1fr; /* 1 колонка на телефонах */
+    }
+}
+
+
+
+/* Заголовки секцій (Статті, Публікації) */
+.articles-section h2,
+.publications-section h2,
+.publication-section h2 {
+    margin-top: 0;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    color: #444;
+    text-align: center;
+}
+
+/* --- Стилі для розділу "Публікації" --- */
+.publications-section .publication-list {
+    display: grid; /* Grid layout для публікацій */
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки на ПК */
+    gap: 25px;
+    justify-content: center;
+}
+
+.publications-section .publication-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анімація при наведенні */
+}
+
+.publications-section .publication-item:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px); /* Ефект підняття блоку при наведенні */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.publications-section .publication-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 600 / 400;
+    object-fit: cover;
+}
+
+.publications-section .publication-details {
+    padding: 20px;
+}
+
+.publications-section .publication-details h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.publications-section .publication-details p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.publications-section .publication-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.publications-section .read-more-link {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease; /* Анімація при наведенні */
+}
+
+.publications-section .read-more-link:hover {
+    background-color: #0056b3;
+}
+
+/* --- Стилі для розділу "Статті" --- */
+.articles-section .article-item {
+    border-bottom: 1px solid #eee;
+    padding: 25px 0;
+    margin-bottom: 25px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    padding: 25px;
+}
+
+.articles-section .article-item:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px); /* Ефект підняття блоку при наведенні */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.articles-section .article-item:last-child {
+    border-bottom: none;
+}
+
+.articles-section .publication-header {
+    display: flex; /* Flexbox для заголовка статті */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.articles-section .publication-title {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.articles-section .publication-title a {
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+    font-size: 1.5em;
+    color: #444;
+}
+
+.articles-section .publication-title a:hover {
+    text-decoration: underline;
+}
+
+.publication-date {
+    font-size: 0.9em;
+    color: #777;
+    margin-right: 20px;
+}
+
+.publication-actions {
+    /* Контейнер для дій над статтею (кнопки) */
+}
+
+.edit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.publication-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+    display: block;
+    margin-top: 20px;
+}
+
+.publication-content .publication-image {
+    margin-right: 0;
+    max-width: 100%;
+    margin-bottom: 25px;
+}
+
+.publication-content .publication-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.publication-content .publication-text {
+    flex-basis: 100%;
+}
+
+.publication-content .publication-text p {
+    margin-bottom: 1.2em;
+    line-height: 1.7;
+    color: #555;
+}
+
+.collapse-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #777;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1.5em;
+    transition: background-color 0.3s ease; /* Анімація при наведенні */
+}
+
+.collapse-btn:hover {
+    background-color: #555;
+}
+
+/* Стилі для футера сайту */
+.footer {
+    padding: 25px 0;
+    background-color: #444;
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 8px 8px 0 0;
+}
+
+.like-btn {
+    background-color: #007bff; /* Синій колір для кнопки "Подобається" */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Анімація при наведенні */
+}
+
+.like-btn:hover {
+    background-color: #0056b3;
+}
+
+/*Зміни для підсвічування "лайкнутих" статей (ЛР) */
+.article-item--liked {
+    background-color: #e6f7ff; /* Світло-блакитний фон для "лайкнутих" статей */
+    border: 2px solid #007bff; /* Синя рамка для "лайкнутих" статей */
+}
+.article-item--liked .publication-content {
+    border: 1px solid #007bff;
+}
+
+.comment-section {
+    margin-top: 25px;
+    border-top: 1px solid #ddd;
+    padding-top: 25px;
+}
+
+.comment-section h4 {
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.comment-form .form-group {
+    margin-bottom: 15px;
+}
+
+.comment-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.comment-name-input,
+.comment-text-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.submit-comment-btn {
+    background-color: #28a745; /* Зелений колір для кнопки коментаря */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease; /* Анімація при наведенні */
+}
+
+.submit-comment-btn:hover {
+    background-color: #1e8436;
+}
+
+.comments-list {
+    margin-top: 20px;
+}
+
+.comment-item {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.comment-item:last-child {
+    border-bottom: none;
+}
+
+.comment-author {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.comment-text {
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Спочатку приховуємо контент і коментарі статей (ЛР - динамічне керування контентом) */
+.publication-content,
+.comment-section {
+    display: none; /* Приховані за замовчуванням */
+}
+
+/* Клас для показу контенту і коментарів при розгортанні статті (ЛР - обробка подій) */
+.article-item--expanded .publication-content,
+.article-item--expanded .comment-section {
+    display: block; /* Показати при додаванні класу article-item--expanded */
+}
+
+/*Стилі для відображення згорнутої статті*/
+.article-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    background-color: #f9f9f9; /* Фон для згорнутої статті */
+}
+
+.future-travels-section .travel-item:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px); /* Ефект підняття елементу при наведенні */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.future-travels-section .travel-item img:hover {
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
